@@ -7,25 +7,25 @@ Notes:
 - Sample DockerFile at root folder can be used to build an image
 - Container image will have a volume at "/config" where the properties file can be mounted into the container
 
-###QuickStart
+### QuickStart
 
 **To Build project in OS X**
 
-Run the command to build project at root folder
+Run the command to build project at root folder<br/>
 "mvn clean install"
 
 **To Run the executable jar**
 
-To start the app with default settings, Run the command "java -jar ./target/backline.jar"
+To start the app with default settings, Run the command "java -jar ./target/backline.jar"<br/>
 To start the app with externalized config file, Run the command "java -jar ./target/backline.jar --spring.config.location={path to config files}"
 
 **To build container image**
 
-Run command "docker build . -t {imageTag}"
+Run command "docker build . -t {imageTag}"<br/>
 eg docker build . -t xlpeabrain/backline
 
 **To run container image**
 
-Run command "docker run --name {containerName} {imageTag}"
-eg docker run --name backline xlpeabrain/backline
+Run command "docker run --name {containerName} {imageTag}"<br/>
+eg docker run --name backline xlpeabrain/backline<br/>
 To expose port and mount volume, "docker run --name {containerName} -p {hostport}:{containerport} --mount type=bind,source={hostpath},target={containerPath} {image tag}
