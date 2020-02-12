@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: backline
+server:
+  port: 9090
