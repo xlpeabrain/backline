@@ -17,11 +17,10 @@ resources:
 jobs:
 - name: build-source
   plan:
-  - aggregate:
-    - get: backline-src
-      trigger: true
-    - task: build-src
-      file: backline-src/ci/build-main.yaml
+  - get: backline-src
+    trigger: true
+  - task: build-src
+    file: backline-src/ci/build-main.yml
 #jobs:
 #- name: ci-base-docker-image
 #  plan:
