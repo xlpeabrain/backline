@@ -1,0 +1,42 @@
+# Concouse CI Pipeline definition for Spring Boot
+
+resources:
+- name: backline-src
+  type: git
+  source:
+    uri: https://github.com/xlpeabrain/backline
+    branch: {{backline-branch}}
+
+#- name: java-docker-image
+#  type: docker-image
+#  source:
+#    repository: java
+#    tag:        8-jdk
+
+
+jobs:
+- name: build-source
+  plan:
+  - aggregate:
+    - get: backline-src
+      trigger: true
+    - task: build-src
+      file: backline-src/ci/build-main.yaml
+#jobs:
+#- name: ci-base-docker-image
+#  plan:
+#  - aggregate:
+#    - get: java-docker-image
+#      trigger: true
+#    - get: ci-base-docker-build
+#      trigger: true
+#  - put: ci-base-docker-image
+#    params:
+#      build: ci-base-docker-build/ci/docker-builds/base
+
+#- name: build-main
+#  plan:
+#  - get: spring-boot
+#    trigger: true
+#  - task: build-main
+#    file: spring-boot/ci/build-main.yml
