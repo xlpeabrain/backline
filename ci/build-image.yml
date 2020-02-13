@@ -11,9 +11,9 @@ inputs:
 
 run:
   path: sh
-    args:
-      - -exc
-      - cd target; ls -la;
+  args:
+    - -exc
+    - cd target; ls -la;
 
 outputs:
 - name: backline-src
