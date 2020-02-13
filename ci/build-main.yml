@@ -7,6 +7,9 @@ image_resource:
     repository: maven
     tag: 3.6.3-jdk-8
 
+caches:
+  - path: .m2
+
 inputs:
 - name: backline-src
 
