@@ -21,6 +21,8 @@ jobs:
     trigger: true
   - task: build-src
     file: backline-src/ci/build-main.yml
+  - task: build-image
+    file: backline-src/ci/build-image.yml
 #jobs:
 #- name: ci-base-docker-image
 #  plan:
