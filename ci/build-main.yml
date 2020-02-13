@@ -12,3 +12,6 @@ inputs:
 
 run:
   path: backline-src/ci/build-main.sh
+
+outputs:
+- name: backline-src
