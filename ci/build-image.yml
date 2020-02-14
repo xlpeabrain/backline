@@ -13,7 +13,7 @@ run:
   path: sh
   args:
     - -exc
-    - pwd; ls -la; cd target; ls -la;
+    - pwd; ls -la; cd backline-src/target; ls -la;
 
 outputs:
 - name: backline-src
