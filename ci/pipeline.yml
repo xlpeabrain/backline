@@ -30,22 +30,9 @@ jobs:
   - put: backline-docker-image
     params:
       build: backline-src
+- name: test-image
+  plan:
+    - get: backline-src
+    - task: smoke-test-image
+      file: backline-src/ci/test-image.yml
 
-#jobs:
-#- name: ci-base-docker-image
-#  plan:
-#  - aggregate:
-#    - get: java-docker-image
-#      trigger: true
-#    - get: ci-base-docker-build
-#      trigger: true
-#  - put: ci-base-docker-image
-#    params:
-#      build: ci-base-docker-build/ci/docker-builds/base
-
-#- name: build-main
-#  plan:
-#  - get: spring-boot
-#    trigger: true
-#  - task: build-main
-#    file: spring-boot/ci/build-main.yml
