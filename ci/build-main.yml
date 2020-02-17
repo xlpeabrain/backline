@@ -8,7 +8,7 @@ image_resource:
     tag: 3.6.3-jdk-8
 
 caches:
-  - path: /root/.m2
+  - path: .m2
 
 inputs:
 - name: backline-src
