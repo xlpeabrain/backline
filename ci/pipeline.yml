@@ -30,8 +30,7 @@ jobs:
   - put: backline-docker-image
     params:
       build: backline-src
-#  - task: build-image
-#    file: backline-src/ci/build-image.yml
+
 #jobs:
 #- name: ci-base-docker-image
 #  plan:
