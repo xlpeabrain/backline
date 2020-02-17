@@ -1,4 +1,8 @@
 #!/bin/sh
+
+sudo apt update && sudo apt upgrade
+sudo apt install curl
+
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 if [[ $RESULT == *"UP"* ]];
