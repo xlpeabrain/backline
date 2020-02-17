@@ -33,6 +33,7 @@ jobs:
 - name: test-image
   plan:
     - get: backline-src
+      passed: [build-source]
     - task: smoke-test-image
       file: backline-src/ci/test-image.yml
 
