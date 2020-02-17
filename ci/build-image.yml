@@ -6,14 +6,29 @@ image_resource:
   source:
     repository: busybox
 
+resources:
+- name: backline-docker-image
+  type: docker-image
+  source:
+    repository: xlpeabrain/backline
+    username: {{backline-repo-username}}
+    password: {{backline-repo-password}}
+
 inputs:
 - name: backline-src
 
-run:
-  path: sh
-  args:
-    - -exc
-    - pwd; ls -la; cd backline-src/target; ls -la;
+put: backline-docker-image
+  params:
+    build: bacline-src
+
+
+#run:
+#  path: sh
+#  args:
+#    - -exc
+#    - cd backline-src;
+#    - docker build . -t xlpeabrain/backline
+#    - pwd; ls -la; cd backline-src/target; ls -la;
 
 outputs:
 - name: backline-src
