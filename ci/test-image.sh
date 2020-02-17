@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 if [[ $RESULT == *"UP"* ]];
