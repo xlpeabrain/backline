@@ -14,7 +14,7 @@ sleep 30
 
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
-if [[ $RESULT == *"UP"* ]];
+if [[ $RESULT == *_"UP"_* ]];
 then
   echo "Up"
   exit 0
