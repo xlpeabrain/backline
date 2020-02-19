@@ -33,7 +33,9 @@ jobs:
 - name: test-image
   plan:
     - get: backline-src
+    - get: backline-docker-image
       passed: [build-source]
+      trigger: true
     - task: smoke-test-image
       privileged: true
       file: backline-src/ci/test-image.yml
