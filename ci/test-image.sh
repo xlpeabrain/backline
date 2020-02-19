@@ -1,14 +1,14 @@
 #!/bin/sh
 
-sudo apt update && sudo apt upgrade
-sudo apt install curl
+
 
 source /docker-lib.sh
 start_docker
 
 cd backline-src
 ls
-docker run --rm --name backline -p 8080:8080 xlpeabrain/backline
+docker run -d --rm --name backline -p 8080:8080 xlpeabrain/backline
+curl localhost:8080
 
 
 #RESULT=$(curl http://localhost:8080/actuator/health)
