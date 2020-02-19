@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: xlpeabrain/backline
+    repository: quay.io/cosee-concourse/dind
 
 caches:
   - path: .m2

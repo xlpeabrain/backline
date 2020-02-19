@@ -35,5 +35,6 @@ jobs:
     - get: backline-src
       passed: [build-source]
     - task: smoke-test-image
+      privileged: true
       file: backline-src/ci/test-image.yml
 
