@@ -8,6 +8,7 @@ kubectl config --kubeconfig=kconfig set-cluster k8s-cluster --server=$K8S_API --
 kubectl config --kubeconfig=kconfig set-credentials $K8S_USER --client-certificate=$K8S_CLIENT_CERT --client-key=$K8S_CLIENT_KEY
 kubectl config --kubeconfig=kconfig set-context default --cluster=development --namespace=$K8S_NAMESPACE --user=$K8S_USER
 
+kubectl config use-context default
 kubectl config current-context
 ls -la /
 cat /.kube/config
