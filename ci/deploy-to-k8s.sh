@@ -4,11 +4,12 @@ set -e
 cd backline-src
 ls
 env
+echo ""
 
 #Setup Kubeconfig
-kubectl config --kubeconfig=kconfig set-cluster k8s-cluster --server=$k8s-api --insecure-skip-tls-verify
-kubectl config --kubeconfig=kconfig set-credentials $k8s-user --client-certificate=$k8s-client-cert --client-key=$k8s-client-key
-kubectl config --kubeconfig=kconfig set-context ci --cluster=development --namespace=$k8s-namespace --user=$k8s-user
+kubectl config --kubeconfig=kconfig set-cluster k8s-cluster --server=$K8S-API --insecure-skip-tls-verify
+kubectl config --kubeconfig=kconfig set-credentials $K8S-USER --client-certificate=$K8S-CLIENT-CERT --client-key=$K8S-CLIENT-KEY
+kubectl config --kubeconfig=kconfig set-context ci --cluster=development --namespace=$K8S-NAMESPACE --user=$K8S-USER
 
 #Test access to cluster
 kubectl cluster-info
