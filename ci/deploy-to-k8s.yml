@@ -11,4 +11,5 @@ inputs:
 
 run:
   path: backline-src/ci/deploy-to-k8s.sh
+#  args: ["((k8s-api))", "((k8s-user))", "((k8s-client-cert))", "((k8s-client-key))", "((k8s-namespace))"]
 
