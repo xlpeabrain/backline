@@ -39,4 +39,13 @@ jobs:
     - task: smoke-test-image
       privileged: true
       file: backline-src/ci/test-image.yml
+- name: deploy-backline-app
+  plan:
+    - get: backline-src
+    - get: backline-docker-image
+      passed: [build-source]
+      trigger: true
+    - task: deploy-app
+      privileged: true
+      file: backline-src/ci/deploy-to-k8s.yml
 
