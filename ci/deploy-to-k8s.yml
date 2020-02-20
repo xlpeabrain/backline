@@ -11,12 +11,12 @@ inputs:
 
 run:
   path: backline-src/ci/deploy-to-k8s.sh
-params:
-  K8S-API: {{k8s-api}}
-  K8S-USER: {{k8s-user}}
-  K8S-CLIENT-CERT: {{k8s-client-cert}}
-  K8S-CLIENT-KEY: {{k8s-client-key}}
-  K8S-NAMESPACE: {{k8s-namespace}}
+#params:
+#  K8S-API: {{k8s-api}}
+#  K8S-USER: {{k8s-user}}
+#  K8S-CLIENT-CERT: {{k8s-client-cert}}
+#  K8S-CLIENT-KEY: {{k8s-client-key}}
+#  K8S-NAMESPACE: {{k8s-namespace}}
 
 #  : ["((k8s-api))", "((k8s-user))", "((k8s-client-cert))", "((k8s-client-key))", "((k8s-namespace))"]
 
