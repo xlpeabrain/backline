@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: bitnami/kubectl
+    repository: devkube/kubectl-docker
 
 inputs:
 - name: backline-src
