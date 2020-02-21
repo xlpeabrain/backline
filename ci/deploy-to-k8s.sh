@@ -15,7 +15,9 @@ echo "### Available contexts"
 kubectl config get-contexts
 kubectl config use-context default
 kubectl config current-context
+echo "Root"
 ls -la /
+
 cat /.kube/config
 
 #Test access to cluster
