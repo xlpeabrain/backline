@@ -19,8 +19,9 @@ kubectl config current-context --kubeconfig=/tmp/config
 
 cat /tmp/config
 
+ping 192.168.206.10
 #Test access to cluster
-kubectl cluster-info
+kubectl cluster-info dump
 
 #
 
