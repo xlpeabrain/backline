@@ -24,7 +24,7 @@ echo "### Kube config end"
 
 
 #Test access to cluster
-kubectl cluster-info --kubeconfig=/tmp/config
+#kubectl cluster-info --kubeconfig=/tmp/config
 
 #
 
