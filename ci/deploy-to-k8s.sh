@@ -6,7 +6,7 @@ echo "Environment Variables"
 env
 
 echo "### Setting up kubeconfig"
-touch ~/.kube/config
+sudo touch ~/.kube/config
 #Setup Kubeconfig
 kubectl config --kubeconfig=kconfig set-cluster k8s-cluster --server=$K8S_API --insecure-skip-tls-verify
 kubectl config --kubeconfig=kconfig set-credentials $K8S_USER --client-certificate=$K8S_CLIENT_CERT --client-key=$K8S_CLIENT_KEY
