@@ -12,7 +12,7 @@ kubectl config --kubeconfig=kconfig set-credentials $K8S_USER --client-certifica
 kubectl config --kubeconfig=kconfig set-context default --cluster=development --namespace=$K8S_NAMESPACE --user=$K8S_USER
 
 echo "Root"
-ls -la /
+ls -la ~/
 cat /.kube/config
 
 echo "### Available contexts"
