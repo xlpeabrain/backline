@@ -17,7 +17,7 @@ kubectl config get-contexts --kubeconfig=/tmp/config
 kubectl config use-context default --kubeconfig=/tmp/config
 kubectl config current-context --kubeconfig=/tmp/config
 
-
+cat /tmp/config
 
 #Test access to cluster
 kubectl cluster-info
