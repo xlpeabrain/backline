@@ -23,7 +23,9 @@ do
   echo "Processing $f file..."
   # take action on each file. $f store current file name
   sed -i -e 's|{app-name}|'$APP_NAME'|' -e 's|{image-repo}|'$IMAGE_REPO'|' -e 's|{image-tag}|'$IMAGE_TAG'|' $f
+  echo "### Contents of $f"
   cat $f
+#  kubectl apply -f $f
 done
 
 
