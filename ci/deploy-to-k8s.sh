@@ -2,6 +2,7 @@
 set -e
 # Folder is according to the name of the concourse resource calling this script
 cd backline-src
+env
 
 echo "### Setting up kubeconfig"
 touch /tmp/config.yml
@@ -21,7 +22,7 @@ for f in $(pwd)/k8s/*.yml ;
 do
   echo "Processing $f file..."
   # take action on each file. $f store current file name
-  sed -e "s/{app-name}/\$APP_NAME/" -e "s/{image-repo}/\$IMAGE_REPO/" -e "s/{image-tag}/\$IMAGE_TAG/" $f
+  sed -i -e "s/{app-name}/\$APP_NAME/" -e "s/{image-repo}/\$IMAGE_REPO/" -e "s/{image-tag}/\$IMAGE_TAG/" $f
   cat $f
 done
 
