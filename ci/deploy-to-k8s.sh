@@ -17,7 +17,7 @@ kubectl config use-context default
 #Test access to cluster
 kubectl cluster-info
 
-FILES=/ci/*.yml
+FILES=/k8s/*
 for f in $FILES
 do
   echo "Processing $f file..."
