@@ -13,18 +13,12 @@ resources:
     username: {{backline-repo-username}}
     password: {{backline-repo-password}}
 
-#- name: java-docker-image
-#  type: docker-image
-#  source:
-#    repository: java
-#    tag:        8-jdk
-
 
 jobs:
 - name: build-source
   plan:
   - get: backline-src
-#    trigger: true
+    trigger: true
   - task: build-src
     file: backline-src/ci/build-main.yml
   - put: backline-docker-image
@@ -43,8 +37,8 @@ jobs:
   plan:
     - get: backline-src
     - get: backline-docker-image
-#      passed: [build-source]
-#      trigger: true
+      passed: [test-image]
+      trigger: true
     - task: deploy-app
       file: backline-src/ci/deploy-to-k8s.yml
       privileged: true

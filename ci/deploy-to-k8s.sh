@@ -2,7 +2,6 @@
 set -e
 # Folder is according to the name of the concourse resource calling this script
 cd backline-src
-env
 
 echo "### Setting up kubeconfig"
 touch /tmp/config.yml
@@ -25,7 +24,7 @@ do
   sed -i -e 's|{app-name}|'$APP_NAME'|' -e 's|{image-repo}|'$IMAGE_REPO'|' -e 's|{image-tag}|'$IMAGE_TAG'|' -e 's|{svc-name}|'$SVC_NAME'|'  $f
   echo "### Contents of $f"
   cat $f
-#  kubectl apply -f $f
+  kubectl apply -f $f
 done
 
 
