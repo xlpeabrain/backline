@@ -1,0 +1,2 @@
+This folder should contain the manifests that can be applied in a K8s cluster to deploy the application.
+Values can be tokenized and passed in via a parameter file to the deployment pipeline, in the /ci folder.

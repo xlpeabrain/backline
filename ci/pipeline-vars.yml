@@ -1,1 +1,4 @@
 backline-branch: master
+app-name: backline
+image-repo: xlpeabrain/backline
+image-tag: latest
