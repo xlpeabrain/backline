@@ -1,0 +1,8 @@
+- Review deploy-to-k8s.sh on the way the env variables are passed into the yml
+- Document how to use the ci folder
+- Document how to use the k8s folder
+- Add a post deploy to k8s test stage
+- Create a Loadbalancer or Ingress for Virtualbox cluster
+- Add integrations to DB for example
+- Add integrations for MQ for example
+- Spring cloud samples
