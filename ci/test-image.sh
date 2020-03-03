@@ -1,11 +1,11 @@
 #!/bin/sh
 
-source /docker-lib.sh
-start_docker
-pwd
-
-cd backline-src
-#ls
+#source /docker-lib.sh
+#start_docker
+#pwd
+#
+#cd backline-src
+##ls
 docker run -d --rm --name backline -p 8080:8080 xlpeabrain/backline
 sleep 15
 
@@ -20,6 +20,11 @@ then
   echo $RESULT >> status.txt
   exit 0
 else
+  echo "FAILED"
+  cat /etc/os-release
+  lsb_release -a
+  hostnamectl
+  uname -r
   echo "Down"
   exit 1
 fi
