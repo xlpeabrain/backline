@@ -1,10 +1,10 @@
 #!/bin/sh
 
-#source /docker-lib.sh
-#start_docker
+source /docker-lib.sh
+start_docker
 
-#docker run -d --rm --name backline -p 8080:8080 xlpeabrain/backline
-#sleep 15
+docker run -d --rm --name backline -p 8080:8080 xlpeabrain/backline
+sleep 15
 
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo "$RESULT"
