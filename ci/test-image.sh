@@ -12,7 +12,7 @@ sleep 15
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 
-if [[ $RESULT = *UP* ]];
+if [[ $RESULT == *"UP"* ]];
 then
   echo "Up"
   cd ../
