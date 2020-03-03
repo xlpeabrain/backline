@@ -10,8 +10,7 @@ RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 
 # Define the sanity check logic for container validation here
-#if [[ $RESULT == '/{/"status/":/"UP/"/}' ]];
-if test "$RESULT" != "UP";
+if test "$RESULT" != "DOWN";
 then
   echo "Up"
   cd gen
