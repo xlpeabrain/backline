@@ -15,7 +15,9 @@ if test "$RESULT" != "UP";
 then
   echo "Up"
   mkdir gen
-  echo $RESULT >> status.txt
+  echo $RESULT >> gen/status.txt
+  pwd
+  ls gen
   exit 0
 else
   echo "FAILED"
