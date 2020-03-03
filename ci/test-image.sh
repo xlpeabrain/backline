@@ -10,11 +10,11 @@ RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 
 # Define the sanity check logic for container validation here
-if test "$RESULT" != "DOWN";
+if test $RESULT == "UP";
 then
   echo "Up"
   cd gen
-  echo $RESULT >> status.txt
+#  echo $RESULT >> status.txt
   exit 0
 else
   echo "FAILED"
