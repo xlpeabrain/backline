@@ -14,10 +14,10 @@ echo $RESULT
 if test "$RESULT" != "UP";
 then
   echo "Up"
-  mkdir gen
-  echo $RESULT >> gen/status.txt
+  cd gen
+  echo $RESULT >> status.txt
   pwd
-  ls gen
+  ls
   exit 0
 else
   echo "FAILED"

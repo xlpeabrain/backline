@@ -16,4 +16,4 @@ run:
   path: backline-src/ci/test-image.sh
 
 outputs:
-- name: backline-src
+- name: gen
