@@ -10,7 +10,7 @@ RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 
 # Define the sanity check logic for container validation here
-if [[ $(echo $RESULT) == *\"UP\"* ]];
+if [[ $RESULT == *\"UP\"* ]];
 then
   echo "Up"
   mkdir gen
