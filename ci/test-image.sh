@@ -9,7 +9,8 @@ sleep 15
 RESULT=$(curl http://localhost:8080/actuator/health)
 echo $RESULT
 
-if [[ $(echo $RESULT) == *"UP"* ]];
+# Define the sanity check logic for container validation here
+if [[ $(echo $RESULT) == *\"UP\"* ]];
 then
   echo "Up"
   mkdir gen
