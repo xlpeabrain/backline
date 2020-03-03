@@ -16,8 +16,6 @@ then
   echo "Up"
   cd gen
   echo $RESULT >> status.txt
-  pwd
-  ls
   exit 0
 else
   echo "FAILED"
