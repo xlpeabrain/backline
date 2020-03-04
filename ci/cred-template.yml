@@ -1,6 +1,11 @@
+#docker credentials (password can be replaced with access token for dockerhub)
 backline-repo-username:
 backline-repo-password:
+#git credentials to push
+backline-private-key:
+# K8s master node or load balancer to master nodes
 k8s-api:
+# K8s user credentials to perform deployment
 k8s-user:
 k8s-namespace:
 k8s-token:
