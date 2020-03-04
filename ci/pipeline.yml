@@ -69,8 +69,6 @@ jobs:
       params:
         K8S_API: {{k8s-api}}
         K8S_USER: {{k8s-user}}
-        K8S_CLIENT_CERT_DATA: {{k8s-client-cert}}
-        K8S_CLIENT_KEY_DATA: {{k8s-client-key}}
         K8S_NAMESPACE: {{k8s-namespace}}
         K8S_TOKEN: {{k8s-token}}
         APP_NAME: {{app-name}}

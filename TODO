@@ -6,3 +6,8 @@
 - Add integrations to DB for example
 - Add integrations for MQ for example
 - Spring cloud samples
+- Add ci stage for gradle build
+- Investigate time for bucc
+- Integrating the setup of concourse and k8s streamline
+- package source control/image repo in dev local
+-
