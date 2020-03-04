@@ -1,4 +1,15 @@
 # Concouse CI Pipeline definition for Spring Boot
+resource_types:
+- name: gate-resource
+  type: docker-image
+  source:
+    repository: meshcloud/gate-resource
+
+gate-source: &gate-source
+  git:
+    uri: git@github.com:xlpeabrain/backline.git
+    branch: gates
+    private_key: {{backline-private-key}}
 
 resources:
 - name: backline-src
@@ -12,9 +23,15 @@ resources:
     repository: xlpeabrain/backline
     username: {{backline-repo-username}}
     password: {{backline-repo-password}}
+- name: success-gate
+  type: gate-resource
+  source:
+    <<: *gate-source
+    gate: success
 
 
 jobs:
+
 - name: build-source
   plan:
   - get: backline-src
@@ -24,6 +41,7 @@ jobs:
   - put: backline-docker-image
     params:
       build: backline-src
+
 - name: test-image
   plan:
     - get: backline-src
@@ -33,15 +51,21 @@ jobs:
     - task: smoke-test-image
       privileged: true
       file: backline-src/ci/test-image.yml
-- name: deploy-backline-app
+    - put: success-gate
+      params:
+        item_file: gen/*
+
+- name: deploy-to-k8s
   plan:
-    - get: backline-src
-    - get: backline-docker-image
+    - get: success-gate
       passed: [test-image]
       trigger: true
+    - get: backline-src
+      passed: [test-image]
+    - get: backline-docker-image
+      passed: [test-image]
     - task: deploy-app
       file: backline-src/ci/deploy-to-k8s.yml
-      privileged: true
       params:
         K8S_API: {{k8s-api}}
         K8S_USER: {{k8s-user}}
