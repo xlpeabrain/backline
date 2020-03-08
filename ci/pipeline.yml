@@ -17,11 +17,11 @@ resources:
   source:
     uri: https://github.com/xlpeabrain/backline
     branch: {{backline-branch}}
-#    paths:
-#    - /ci/*
-#    - /k8s/*
-#    - /src/*
-#    - pom.xml
+    paths:
+    - ci/**
+    - k8s/**
+    - src
+    - pom.xml
 - name: backline-docker-image
   type: docker-image
   source:
